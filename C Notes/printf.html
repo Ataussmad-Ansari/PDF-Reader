@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="notesH1">
+        <h1>printf(), scanf() in C</h1>
+    </div>
+    <div class="info">
+        <p>In the C programming language, printf and scanf are two important functions that are used for input and output operations. They are part of the standard input/output library in C.</p>
+<h3>printf: </h3>
+<ul>
+<li>The printf() function is used for output (displaying text) in the C programming language.</li>
+<li>It allows you to format and print text to the standard output (usually the console).</li>
+</ul>
+The general syntax is:
+<div class="codeBox">
+    <code>
+        <span style="color: orange;">printf</span>(<span style="color: lightblue;">"format_string"</span>, arg1, arg2, ...);
+    </code>
+</div>
+<ul>
+    <li>The "format_string" is a string containing format specifiers that control how the arguments are formatted and displayed. For example, %d is used to display an integer, %f for a floating-point number, and %s for a string.</li>
+    <li>The arg1, arg2, etc., are the values that will be substituted into the format specifiers in the order they appear in the printf statement.</li>
+</ul>
+<div class="codeBox">
+    <code>
+        <span style="color: yellow;">int </span>num = <span style="color: #ff3333;">9</span>;<br>
+        <span style="color: orange;">printf</span>(<span style="color: lightblue;">"Value of num = %d"</span>, num);
+    </code>
+</div><br>
+<h3>scanf:</h3>
+<ul>
+    <li>scanf is used for input (reading data) in the C programming language.</li>
+        <li>It allows you to read values from the standard input (usually the keyboard) and store them in variables.</li>
+</ul>
+The general syntax is:
+<div class="codeBox">
+    <code>
+        <span style="color: orange;">scanf</span>(<span style="color: lightblue;">"format_string"</span>, &var1, &var2, ...);
+    </code>
+</div>
+<ul>
+    <li>The "format_string" specifies the expected format of the input, just like in printf. You use format specifiers to indicate the type of data you expect.</li>
+    <li>The '&' symbol is used to get the memory address of the variables where the input values should be stored.</li>
+</ul>
+<div class="codeBox">
+    <code>
+        <span style="color: yellow;">int </span>num;<br>
+        <span style="color: orange;">printf</span>(<span style="color: lightblue;">"%d"</span>, &num);
+    </code>
+</div>
+<p>It's important to be careful when using scanf to ensure that the input matches the format specified in the format string, as incorrect input can lead to unexpected behavior or errors. Additionally, input validation is often required to handle cases where the user provides unexpected or incorrect input.</p>
+<p>It's important to note that printf and scanf are powerful but can be prone to errors if not used carefully. Mistakes like format specifier mismatches, buffer overflows, or not handling user input errors can lead to unexpected behavior in your C programs. Therefore, it's essential to use these functions with caution and follow best practices in C programming.</p>
+<p style="text-align: center;">__________</p>
+    </div>
+</body>
+</html>

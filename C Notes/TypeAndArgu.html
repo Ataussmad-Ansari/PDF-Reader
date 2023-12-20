@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/a11y-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <h1 class="notesH1">Conditions of Return Types and Arguments</h1>
+    <div class="info">
+        <p>
+            In C programming language, functions can be called either with or without arguments and might return values.
+            They may or might not return values to the calling functions.
+        </p>
+        <ol>
+            <li>Function with no arguments and no return value</li>
+            <li>Function with no arguments and with return value</li>
+            <li>Function with argument and with no return value</li>
+            <li>Function with arguments and with return value</li>
+        </ol>
+        <hr>
+
+        <!-- Function with no arguments and no return value -->
+        <p><b class="subH">1. Function with no arguments and no return value</b></p>
+        <p>
+            When a function has no arguments, it does not receive any data from the calling function. Similarly, when it
+            does not return a value, the calling function does not receive any data from the called function.
+        </p>
+        <p><b>Syntax:</b></p>
+        <pre><code>Function declaration : void function();
+Function call : function();
+Function definition :
+void function()
+{
+    statements;
+}</code></pre>
+
+        <p><b>Example:</b></p>
+        <pre><code>#include &lt;stdio.h> 
+  
+void value(void); 
+      
+void main() {  
+    value();  
+} 
+      
+void value(void) 
+{ 
+    float year = 1, period = 5, amount = 5000, inrate = 0.12; 
+    float sum; 
+    sum = amount; 
+    while (year &lt;= period) { 
+        sum = sum * (1 + inrate); 
+        year = year + 1; 
+    } 
+    printf(" The total amount is :%f", sum); 
+}</code></pre>
+        <p><b>Output</b></p>
+        <pre><code> The total amount is :8811.708984</code></pre>
+        <hr>
+
+        <!-- Function with no arguments and with return value -->
+        <p><b class="subH">2. Function with no arguments and with return value</b></p>
+        <p>
+            There could be occasions where we may need to design functions that may not take any arguments but returns a
+            value to the calling function. An example of this is getchar function which has no parameters but it returns
+            an integer and integer-type data that represents a character.
+        </p>
+        <p><b>Syntax:</b></p>
+        <pre><code>Function declaration : int function();
+Function call : function();
+Function definition :
+int function()
+{
+    statements;
+    return x;
+}</code></pre>
+        <p><b>Example:</b></p>
+        <pre><code>#include &lt;math.h> 
+#include &lt;stdio.h> 
+              
+int sum(); 
+              
+int main() 
+{ 
+    int num; 
+    num = sum(); 
+    printf("Sum of two given values = %d", num); 
+    return 0; 
+} 
+              
+int sum() 
+{ 
+    int a = 50, b = 80, sum; 
+    sum = sqrt(a) + sqrt(b); 
+    return sum; 
+} </code></pre>
+        <p><b>Output</b></p>
+        <pre><code>Sum of two given values = 16</code></pre>
+        <hr>
+        <!-- Function with argument and with no return value -->
+        <p><b class="subH">3. Function with argument and with no return value</b></p>
+        <p>
+            When a function has arguments, it receives any data from the calling function but it returns no values.
+            These are void functions with no return values.
+        </p>
+        <p><b>Syntax:</b></p>
+        <pre><code>Function declaration : void function ( int );
+Function call : function( x );
+Function definition:
+void function( int x )
+{
+    statements;
+}</code></pre>
+        <p><b>Example:</b></p>
+        <pre><code>#include &lt;stdio.h> 
+void function(int, int[], char[]); 
+
+int main() 
+{ 
+    int a = 20; 
+    int ar[5] = { 10, 20, 30, 40, 50 }; 
+    char str[30] = "learnClanguage"; 
+
+    // function call 
+    function(a, &ar[0], &str[0]); 
+    return 0; 
+} 
+      
+void function(int a, int* ar, char* str) 
+{ 
+    int i; 
+    printf("value of a is %d\n\n", a); 
+    
+    for (i = 0; i &lt; 5; i++) { 
+        printf("value of ar[%d] is %d\n", i, ar[i]); 
+    } 
+
+    printf("\nvalue of str is %s\n", str); 
+} </code></pre>
+        <p><b>Output</b></p>
+        <pre><code>value of a is 20
+
+value of ar[0] is 10
+value of ar[1] is 20
+value of ar[2] is 30
+value of ar[3] is 40
+value of ar[4] is 50
+            
+value of str is learnClanguage</code></pre>
+        <hr>
+        <!-- Function with arguments and with return value -->
+        <p><b class="subH">Function with arguments and with return value</b></p>
+        <p><b>Syntax:</b></p>
+        <pre><code>Function declaration : int function ( int );
+Function call : function( x );
+Function definition:
+int function( int x )
+{
+    statements;
+    return x;
+}</code></pre>
+        <p><b>Example:</b></p>
+        <pre><code>#include &lt;stdio.h> 
+#include &lt;string.h> 
+              
+int function(int, int[]); 
+              
+int main() 
+{ 
+    int i, a = 20; 
+    int arr[5] = { 10, 20, 30, 40, 50 }; 
+              
+    a = function(a, &arr[0]); 
+              
+    printf("value of a is %d\n", a); 
+    for (i = 0; i &lt; 5; i++) { 
+        printf("value of arr[%d] is %d\n", i, arr[i]); 
+    } 
+              
+    return 0; 
+} 
+              
+int function(int a, int* arr) 
+{ 
+    int i; 
+    a = a + 20; 
+              
+    arr[0] = arr[0] + 50; 
+    arr[1] = arr[1] + 50; 
+    arr[2] = arr[2] + 50; 
+    arr[3] = arr[3] + 50; 
+    arr[4] = arr[4] + 50; 
+              
+    return a; 
+}</code></pre>
+
+        <p><b>Output</b></p>
+        <pre><code>value of a is 40
+value of arr[0] is 60
+value of arr[1] is 70
+value of arr[2] is 80
+value of arr[3] is 90
+value of arr[4] is 100</code></pre>
+
+        <p style="text-align: center;">__________</p>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+    </script>
+</body>
+
+</html>
